@@ -1,0 +1,30 @@
+<h1>Klient: {{this.name}}</h1>
+
+<h2>Szczegóły o kliencie</h2>
+<h2>Adres</h2>
+<p>Ulica: {{address.street}}</p>
+<p>Numer lokalu: {{address.suite}}</p>
+<p>Miasto: {{address.city}}</p>
+<p>Kod pocztowy: {{address.zipcode}}</p>
+<p>NIP: {{this.nip}}</p>
+
+<form action="/main/:id/newAction" method="POST">
+
+  <label for="date">Data kontaktu</label><br /><br />
+  <input type="text" id="date" name="date" required />
+  <br /><br />
+  <label for="type">Rodzaj akcji</label><br />
+  <select id="type" name="type" required>
+    <option value="...">...</option>
+    <option value="Phone call">Telefon</option>
+    <option value="Meeting">Spotkanie</option>
+    <option value="Other">Inne</option>
+  </select>
+  <br /><br />
+
+  <label for="description">Opis</label><br />
+  <input type="text" id="description" name="description" required />
+  <br /><br />
+
+  <button type="submit">Dodaj Akcję</button>
+</form>

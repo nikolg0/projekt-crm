@@ -1,0 +1,29 @@
+<h2>Lista klientów</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Adres</th>
+      <th>NIP</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each clients}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{address.street}}
+          {{address.suite}}
+          {{address.city}}
+          {{address.zipcode}}
+        </td>
+        <td>{{this.nip}}</td>
+        <td>
+          <a href="main/{{_id}}" class="btn btn-primary">Więcej</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<a href="/main/newClient" class="btn btn-primary">Dodaj Klienta</a>

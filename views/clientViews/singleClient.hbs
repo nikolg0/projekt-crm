@@ -1,0 +1,21 @@
+<h1>Klient: {{this.name}}</h1>
+
+<h2>Szczegóły o kliencie</h2>
+<h2>Adres</h2>
+<p>Ulica: {{address.street}}</p>
+<p>Numer lokalu: {{address.suite}}</p>
+<p>Miasto: {{address.city}}</p>
+<p>Kod pocztowy: {{address.zipcode}}</p>
+<p>NIP: {{this.nip}}</p>
+
+<h2>Akcje</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Data kontaktu</th>
+      <th>Rodzaj akcji</th>
+      <th>Opis akcji</th>
+      <th><a href="/main/{{_id}}/newAction" class="btn btn-success">Dodaj akcję</th>
+    </tr>
+  </thead>
+</table>
