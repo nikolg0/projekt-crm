@@ -5,7 +5,9 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
 const clientRouter = require("./app/router/clientRouter");
-const newActionController = require("./app/controllers/newActionController");
+
+const actionRouter = require("./app/router/actionRouter");
+
 const userController = require("./app/controllers/userController");
 
 mongoose.connect("mongodb://127.0.0.1:27017/projekt-CRM");
@@ -24,14 +26,13 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.use("/main", clientRouter);
+app.use("/main", clientRouter, actionRouter);
 
-app.get("/main/:id/newAction", (_req, res) => {
-  console.log("zapytanie się powiodło");
-  res.render("actionViews/newAction");
+app.get("/login/signup", (_req, res) => {
+  res.render("userViews/signupUser");
 });
 
-app.post("/main/:id/newAction", newActionController.create);
+app.post("/login/signup", userController.create);
 
 app.get("/login", (_req, res) => {
   res.render("userViews/loginUser");

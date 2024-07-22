@@ -1,12 +1,12 @@
-<h1>Klient: {{this.name}}</h1>
+<h1>Klient: {{data.name}}</h1>
 
 <h2>Szczegóły o kliencie</h2>
 <h2>Adres</h2>
-<p>Ulica: {{address.street}}</p>
-<p>Numer lokalu: {{address.suite}}</p>
-<p>Miasto: {{address.city}}</p>
-<p>Kod pocztowy: {{address.zipcode}}</p>
-<p>NIP: {{this.nip}}</p>
+<p>Ulica: {{data.address.street}}</p>
+<p>Numer lokalu: {{data.address.suite}}</p>
+<p>Miasto: {{data.address.city}}</p>
+<p>Kod pocztowy: {{data.address.zipcode}}</p>
+<p>NIP: {{data.nip}}</p>
 
 <form action="/main/:id/newAction" method="POST">
 
@@ -26,5 +26,5 @@
   <input type="text" id="description" name="description" required />
   <br /><br />
 
-  <button type="submit">Dodaj Akcję</button>
+  <button href="/main/{{id}}" type="submit">Dodaj Akcję</button>
 </form>

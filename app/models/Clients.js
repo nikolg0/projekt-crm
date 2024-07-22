@@ -9,6 +9,12 @@ const Client = new mongoose.Schema({
     zipcode: String,
   },
   nip: String,
+  actions: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Action",
+    },
+  ],
 });
 
 module.exports = mongoose.model("Client", Client);

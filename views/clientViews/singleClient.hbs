@@ -15,7 +15,17 @@
       <th>Data kontaktu</th>
       <th>Rodzaj akcji</th>
       <th>Opis akcji</th>
-      <th><a href="/main/{{_id}}/newAction" class="btn btn-success">Dodaj akcję</th>
+      <th><a href="/main/{{this._id}}/newAction">Dodaj akcję</th>
     </tr>
   </thead>
+
+  <tbody>
+    {{#each actions}}
+    <tr>
+      <td>{{this.date}}</td>
+      <td>{{this.type}}</td>
+      <td>{{this.description}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
 </table>
