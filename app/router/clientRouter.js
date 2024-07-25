@@ -8,7 +8,7 @@ const newClientController = require("../controllers/newClientController");
 router.get("/", clientController.index);
 
 router.get("/newClient", (_req, res) => {
-  res.render("clientViews/newClient");
+  res.render("clientViews/newClient", { style: "newClient.css" });
 });
 
 router.post("/newClient", newClientController.create);

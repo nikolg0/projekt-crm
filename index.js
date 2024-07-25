@@ -29,13 +29,13 @@ app.use(cookieParser());
 app.use("/main", clientRouter, actionRouter);
 
 app.get("/login/signup", (_req, res) => {
-  res.render("userViews/signupUser");
+  res.render("userViews/signupUser", { style: "signupUser.css" });
 });
 
 app.post("/login/signup", userController.create);
 
 app.get("/login", (_req, res) => {
-  res.render("userViews/loginUser");
+  res.render("userViews/loginUser", { style: "loginUser.css" });
 });
 app.post("/login", userController.login);
 

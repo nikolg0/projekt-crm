@@ -5,8 +5,7 @@ const Action = new mongoose.Schema({
   type: String,
   description: String,
   clientId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Client",
+    type: String,
   },
 });
 

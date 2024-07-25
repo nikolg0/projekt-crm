@@ -1,12 +1,12 @@
-<h1>Klient: {{this.name}}</h1>
+<h1>Klient: {{post.name}}</h1>
 
 <h2>Szczegóły o kliencie</h2>
 <h2>Adres</h2>
-<p>Ulica: {{address.street}}</p>
-<p>Numer lokalu: {{address.suite}}</p>
-<p>Miasto: {{address.city}}</p>
-<p>Kod pocztowy: {{address.zipcode}}</p>
-<p>NIP: {{this.nip}}</p>
+<p>Ulica: {{post.address.street}}</p>
+<p>Numer lokalu: {{post.address.suite}}</p>
+<p>Miasto: {{post.address.city}}</p>
+<p>Kod pocztowy: {{post.address.zipcode}}</p>
+<p>NIP: {{post.nip}}</p>
 
 <h2>Akcje</h2>
 <table>
@@ -15,7 +15,7 @@
       <th>Data kontaktu</th>
       <th>Rodzaj akcji</th>
       <th>Opis akcji</th>
-      <th><a href="/main/{{this._id}}/newAction">Dodaj akcję</th>
+      <th><a href="/main/{{post._id}}/newAction">Dodaj akcję</th>
     </tr>
   </thead>
 
