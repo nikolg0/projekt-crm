@@ -3,24 +3,22 @@ const Client = require("../models/Clients");
 
 module.exports = {
   create: async (req, res) => {
-    const userCookie = req.cookies.user;
+    const clientCookie = req.cookies.user;
     console.log(req.params);
     const { date, type, description } = req.body;
-    const clientId = userCookie.id;
+    const clientId = req.params.id;
     try {
       const newAction = new Action({
-        date,
+        date: new Date(date),
         type,
         description,
         clientId,
       });
-      console.log("id ciasteczka");
-      console.log(userCookie);
-      const savedAction = await newAction
+      newAction
         .save()
         .then(() => {
           console.log("udało się");
-          res.redirect(`/main/${req.params.id}/newAction`);
+          res.redirect(`/main/${req.params.id}`);
         })
         .catch((err) => {
           console.log("błąd");

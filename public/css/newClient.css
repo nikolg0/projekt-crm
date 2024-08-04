@@ -1,3 +1,105 @@
 body {
   font-family: Fira Sans;
+  margin: 0;
+  text-align: center;
+  font-size: 1.6em;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(
+    to left,
+    #ffffff 0%,
+    #ffffff 30%,
+    #ff5100 30%,
+    #ff5100 100%
+  );
+}
+
+h2 {
+  margin-bottom: -10px;
+  font-size: 2em;
+}
+
+hr {
+  width: 75px;
+  border: #c03d00 1.5px solid;
+  margin-bottom: 30px;
+}
+
+.name,
+.name-input,
+.nip,
+.nip-input {
+  position: absolute;
+  left: 120px;
+  font-weight: 600;
+  top: 70px;
+}
+
+.name-input {
+  top: 100px;
+}
+
+.nip {
+  top: 160px;
+}
+
+.nip-input {
+  top: 190px;
+}
+
+input {
+  border: transparent;
+  border-bottom: white 1px solid;
+  padding: 8px 80px 8px 4px;
+  background-color: transparent;
+}
+
+input:hover {
+  background-color: rgba(184, 184, 184, 0.534);
+}
+
+button {
+  position: absolute;
+  right: 110px;
+  top: 360px;
+  font-weight: 600;
+  color: #ff5100;
+  font-size: 1.3em;
+  padding: 1px 7px 2px 7px;
+  border: #ff5100 2px solid;
+  background-color: white;
+  border-radius: 3px;
+}
+
+button:hover {
+  color: white;
+  background-color: #ff5100;
+}
+
+i {
+  font-size: 1.2em;
+  color: white;
+  position: absolute;
+  right: 96%;
+  top: 20px;
+}
+
+i:hover {
+  color: gray;
+}
+
+@media (max-width: 480px) {
+  i {
+    right: 91%;
+  }
+  body {
+    background: #ff5100;
+  }
+  button {
+    top: 760px;
+    right: 125px;
+  }
+  h2 {
+    padding-top: 110px;
+  }
 }

@@ -1,14 +1,15 @@
 <h2>Logowanie</h2>
 
+<h2><a href="/login/signup">Rejestracja</a></h2>
 <form action="/login" method="POST">
 
-  <label for="email">Email</label><br />
+  <label for="email">Email:</label>
   <input type="text" id="email" name="email" value="{{user.email}}" required />
   <br /><br />
 
-  <label for="password">Hasło</label><br />
+  <label for="password">Hasło:</label>
   <input
-    type="text"
+    type="password"
     id="password"
     name="password"
     value="{{user.password}}"
@@ -18,5 +19,4 @@
 
   <button type="submit">Zaloguj</button>
 
-  <a href="/login/signup">Rejestracja</a>
 </form>

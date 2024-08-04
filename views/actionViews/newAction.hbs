@@ -1,19 +1,21 @@
-<h1>Klient: {{data.name}}</h1>
+<a href="/main/{{data._id}}"><i class="fa-solid fa-backward-step"></i></a>
 
-<h2>Szczegóły o kliencie</h2>
+<h1>Klient: {{data.name}}</h1>
+<hr />
+<h2 class="details">Szczegóły o kliencie:</h2>
 <h2>Adres</h2>
 <p>Ulica: {{data.address.street}}</p>
 <p>Numer lokalu: {{data.address.suite}}</p>
 <p>Miasto: {{data.address.city}}</p>
 <p>Kod pocztowy: {{data.address.zipcode}}</p>
-<p>NIP: {{data.nip}}</p>
+<p class="nip">NIP: {{data.nip}}</p>
 
 <form action="/main/{{data._id}}/newAction" method="POST">
 
   <label for="date">Data kontaktu</label><br /><br />
-  <input type="text" id="date" name="date" required />
+  <input type="date" id="date" name="date" required />
   <br /><br />
-  <label for="type">Rodzaj akcji</label><br />
+  <label for="type">Rodzaj akcji</label><br /><br />
   <select id="type" name="type" required>
     <option value="...">...</option>
     <option value="Phone call">Telefon</option>
@@ -22,9 +24,9 @@
   </select>
   <br /><br />
 
-  <label for="description">Opis</label><br />
+  <label for="description">Opis</label><br /><br />
   <input type="text" id="description" name="description" required />
-  <br /><br />
+  <br /><br /><br />
 
-  <button href="/main/{{data._id}}" type="submit">Dodaj Akcję</button>
+  <button class="button" type="submit">Dodaj Akcję</button>
 </form>

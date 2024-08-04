@@ -1,3 +1,104 @@
 body {
   font-family: Fira Sans;
+  margin: 0;
+  padding: 80px;
+  color: #ff5100;
+  font-size: 1.4em;
+}
+
+hr {
+  width: 130px;
+  border: #ff5100 1.5px solid;
+  position: absolute;
+  left: 82px;
+  top: 120px;
+}
+
+.nip {
+  font-weight: 600;
+}
+
+.details {
+  margin-bottom: -15px;
+}
+
+.action-header {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.action {
+  font-weight: 600;
+  color: #ff5100;
+  font-size: 1.4em;
+  padding: 1px 7px 2px 7px;
+  border: #ff5100 2px solid;
+  border-radius: 3px;
+  text-decoration: none;
+  position: absolute;
+  left: 42.8%;
+  margin-top: 20px;
+}
+
+.action:hover {
+  color: white;
+  background-color: #ff5100;
+}
+
+i {
+  font-size: 1.4em;
+  color: #ff5100;
+  position: absolute;
+  right: 96%;
+  top: 20px;
+}
+
+i:hover {
+  color: gray;
+}
+
+table {
+  font-size: 1.2em;
+}
+
+.trone {
+  background-color: #ff5100;
+  color: white;
+}
+
+td {
+  color: #ff5100;
+  padding: 15px;
+  background-color: rgba(184, 184, 184, 0.534);
+}
+
+.action-type {
+  padding: 10px;
+}
+
+@media (max-width: 480px) {
+  i {
+    right: 91%;
+  }
+  table {
+    width: 101%;
+    font-size: 1.2em;
+  }
+  th,
+  td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  td {
+    border-bottom: rgb(141, 141, 141) 2px solid;
+  }
+  th {
+    border-bottom: #ce4100 3px solid;
+  }
+  .action {
+    font-size: 1.7em;
+    left: 28%;
+  }
 }

@@ -1,10 +1,12 @@
+<a href="/login"><i class="fa-solid fa-backward-step"></i></a>
+
 <h2>Lista klientów</h2>
 <table>
   <thead>
-    <tr>
+    <tr class="trone">
       <th>Nazwa</th>
       <th>Adres</th>
-      <th>NIP</th>
+      <th class="thnip">NIP</th>
     </tr>
   </thead>
 
@@ -18,7 +20,7 @@
           {{address.zipcode}}
         </td>
         <td>{{this.nip}}</td>
-        <td>
+        <td class="more">
           <a href="main/{{_id}}">Więcej</a>
         </td>
       </tr>
@@ -26,4 +28,4 @@
   </tbody>
 </table>
 
-<a href="/main/newClient">Dodaj Klienta</a>
+<a class="addclient" href="/main/newClient">Dodaj Klienta</a>

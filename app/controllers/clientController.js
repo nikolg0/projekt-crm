@@ -17,14 +17,26 @@ module.exports = {
   },
 
   post: (req, res) => {
-    /* let getActions = Action.find({}) */
     Client.findById(req.params.id)
       .lean()
       .then((post) => {
-        res.render("clientViews/singleClient", {
-          post: post,
-          style: "singleClient.css",
-        });
+        if (!post) {
+          return;
+        }
+
+        Action.find({ clientId: req.params.id })
+          .lean()
+          .then((actions) => {
+            console.log(actions);
+            res.render("clientViews/singleClient", {
+              post: post,
+              actions: actions,
+              style: "singleClient.css",
+            });
+          })
+          .catch((err) => {
+            res.send(err);
+          });
       })
       .catch((err) => {
         res.send(err);

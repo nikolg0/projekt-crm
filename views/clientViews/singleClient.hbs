@@ -1,31 +1,36 @@
-<h1>Klient: {{post.name}}</h1>
+<a href="/main"><i class="fa-solid fa-backward-step"></i></a>
 
-<h2>Szczegóły o kliencie</h2>
+<h1>Klient: {{post.name}}</h1>
+<hr />
+<h2 class="details">Szczegóły o kliencie:</h2>
 <h2>Adres</h2>
 <p>Ulica: {{post.address.street}}</p>
 <p>Numer lokalu: {{post.address.suite}}</p>
 <p>Miasto: {{post.address.city}}</p>
 <p>Kod pocztowy: {{post.address.zipcode}}</p>
-<p>NIP: {{post.nip}}</p>
+<p class="nip">NIP: {{post.nip}}</p>
 
-<h2>Akcje</h2>
+<h2 class="action-header">Akcje</h2>
+
 <table>
   <thead>
-    <tr>
+    <tr class="trone">
       <th>Data kontaktu</th>
-      <th>Rodzaj akcji</th>
+      <th class="action-type">Rodzaj akcji</th>
       <th>Opis akcji</th>
-      <th><a href="/main/{{post._id}}/newAction">Dodaj akcję</th>
     </tr>
   </thead>
 
   <tbody>
     {{#each actions}}
-    <tr>
-      <td>{{this.date}}</td>
-      <td>{{this.type}}</td>
-      <td>{{this.description}}</td>
-    </tr>
+      <tr>
+        <td>{{this.date}}</td>
+        <td>{{this.type}}</td>
+        <td>{{this.description}}</td>
+      </tr>
     {{/each}}
   </tbody>
 </table>
+
+<a href="/main/{{post._id}}/newAction" class="action">Dodaj akcję
+</a>
