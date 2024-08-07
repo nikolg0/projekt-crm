@@ -1,6 +1,7 @@
 <h2>Logowanie</h2>
 {{#if userId}}
   <p> Jesteś już zalogowany. </p>
+  <a href="/auth/logout"> Wyloguj</a>
 {{else}}
   <h2><a href="/auth/signup">Rejestracja</a></h2>
   <form action="/auth/login" method="POST">

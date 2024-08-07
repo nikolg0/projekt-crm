@@ -66,4 +66,9 @@ module.exports = {
         res.send(err);
       });
   },
+
+  logout: (_req, res) => {
+    res.clearCookie("AuthToken");
+    res.redirect("/auth/login");
+  },
 };
