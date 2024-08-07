@@ -1,6 +1,3 @@
-const jwt = require("jsonwebtoken");
-const User = require("../models/Users");
-
 module.exports = (req, res, next) => {
   const token = req.cookies["AuthToken"];
   if (token) {
@@ -16,6 +13,7 @@ module.exports = (req, res, next) => {
           res.send(err);
         });
     } catch {
+      console.log("błąd");
       res.redirect("/auth/login?loginRedirect=true");
     }
   } else {

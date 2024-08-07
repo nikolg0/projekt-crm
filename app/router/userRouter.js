@@ -9,12 +9,6 @@ router.get("/signup", (_req, res) => {
 
 router.post("/signup", userController.create);
 
-router.get("/login", (_req, res) => {
-  res.render("userViews/loginUser", { style: "loginUser.css" });
-});
-
-router.post("/login", userController.login);
-
 router.get("/login", (req, res) => {
   if (req.query.loginRedirect) {
     res.render("userViews/loginUser", {
@@ -23,7 +17,9 @@ router.get("/login", (req, res) => {
     });
     return;
   }
-  res.render("userViews/loginUser");
+  res.render("userViews/loginUser", { style: "loginUser.css" });
 });
+
+router.post("/login", userController.login);
 
 module.exports = router;
