@@ -27,7 +27,6 @@ module.exports = {
         Action.find({ clientId: req.params.id })
           .lean()
           .then((actions) => {
-            console.log(actions);
             res.render("clientViews/singleClient", {
               post: post,
               actions: actions,
@@ -37,6 +36,25 @@ module.exports = {
           .catch((err) => {
             res.send(err);
           });
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+  },
+
+  create: (req, res) => {
+    const { name, street, suite, city, zipcode, nip } = req.body;
+    const address = {
+      street,
+      suite,
+      city,
+      zipcode,
+    };
+    const newClient = new Client({ name, address, nip });
+    newClient
+      .save()
+      .then(() => {
+        res.redirect("/");
       })
       .catch((err) => {
         res.send(err);

@@ -6,9 +6,9 @@ const cookieParser = require("cookie-parser");
 
 const clientRouter = require("./app/router/clientRouter");
 
-const actionRouter = require("./app/router/actionRouter");
-
 const userRouter = require("./app/router/userRouter");
+
+const authMiddleware = require("./app/middlewares/authMiddleware");
 
 mongoose.connect("mongodb://127.0.0.1:27017/projekt-CRM");
 
@@ -22,9 +22,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.use("/main", clientRouter, actionRouter);
+app.use("/", clientRouter);
 
-app.use("/login", userRouter);
+app.use("/auth", authMiddleware, userRouter);
 
 app.listen(8080, function () {
   console.log("Serwer Node.js działa");

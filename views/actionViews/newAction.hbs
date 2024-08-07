@@ -1,4 +1,4 @@
-<a href="/main/{{data._id}}"><i class="fa-solid fa-backward-step"></i></a>
+<a href="/{{data._id}}"><i class="fa-solid fa-backward-step"></i></a>
 
 <h1>Klient: {{data.name}}</h1>
 <hr />
@@ -10,7 +10,7 @@
 <p>Kod pocztowy: {{data.address.zipcode}}</p>
 <p class="nip">NIP: {{data.nip}}</p>
 
-<form action="/main/{{data._id}}/newAction" method="POST">
+<form action="/{{data._id}}/newAction" method="POST">
 
   <label for="date">Data kontaktu</label><br /><br />
   <input type="date" id="date" name="date" required />

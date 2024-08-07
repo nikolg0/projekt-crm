@@ -9,10 +9,21 @@ router.get("/signup", (_req, res) => {
 
 router.post("/signup", userController.create);
 
-router.get("/", (_req, res) => {
+router.get("/login", (_req, res) => {
   res.render("userViews/loginUser", { style: "loginUser.css" });
 });
 
-router.post("/", userController.login);
+router.post("/login", userController.login);
+
+router.get("/login", (req, res) => {
+  if (req.query.loginRedirect) {
+    res.render("userViews/loginUser", {
+      error: true,
+      message: "Proszę się zalogować",
+    });
+    return;
+  }
+  res.render("userViews/loginUser");
+});
 
 module.exports = router;

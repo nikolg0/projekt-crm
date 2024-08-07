@@ -1,4 +1,4 @@
-<a href="/login"><i class="fa-solid fa-backward-step"></i></a>
+<a href="/auth/login"><i class="fa-solid fa-backward-step"></i></a>
 
 <h2>Lista klientów</h2>
 <table>
@@ -21,11 +21,11 @@
         </td>
         <td>{{this.nip}}</td>
         <td class="more">
-          <a href="main/{{_id}}">Więcej</a>
+          <a href="/{{_id}}">Więcej</a>
         </td>
       </tr>
     {{/each}}
   </tbody>
 </table>
 
-<a class="addclient" href="/main/newClient">Dodaj Klienta</a>
+<a class="addclient" href="/newClient">Dodaj Klienta</a>

@@ -9,8 +9,7 @@ module.exports = {
     newUser
       .save()
       .then(() => {
-        console.log("dodano użytkownika");
-        res.redirect("/login");
+        res.redirect("/auth/login");
       })
       .catch((err) => {
         res.send(err);
@@ -46,15 +45,13 @@ module.exports = {
               address: user.address,
               nip: user.nip,
             };
-            console.log("dane usera");
-            console.log(user);
             const token = user.generateAuthToken(user);
             res.cookie("AuthToken", token);
             res.cookie("user", JSON.stringify(userData), {
               httpOnly: true,
               secure: true,
             });
-            res.redirect("/main");
+            res.redirect("/");
           } else {
             res.render("userViews/loginUser", {
               error: true,
