@@ -22,9 +22,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.use("/", clientRouter);
+app.use("/auth", userRouter);
 
-app.use("/auth", authMiddleware, userRouter);
+app.use("/", authMiddleware, clientRouter);
 
 app.listen(8080, function () {
   console.log("Serwer Node.js działa");
