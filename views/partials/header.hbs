@@ -18,3 +18,8 @@
     />
   </head>
   <body>
+
+    {{#if userId}}
+  <p> Jesteś już zalogowany. </p>
+  <a href="/auth/logout"> Wyloguj</a>
+{{/if}}
