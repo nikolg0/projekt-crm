@@ -9,6 +9,7 @@ module.exports = {
         res.render("clientViews/client", {
           clients: clients,
           style: "client.css",
+          viewName: "clientView",
         });
       })
       .catch((err) => {
@@ -31,6 +32,7 @@ module.exports = {
               post: post,
               actions: actions,
               style: "singleClient.css",
+              viewName: "singleView",
             });
           })
           .catch((err) => {
