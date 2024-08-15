@@ -1,12 +1,10 @@
-<a href="/auth/login"><i class="fa-solid fa-backward-step"></i></a>
-
 <h2>Lista klientów</h2>
 <table>
   <thead>
     <tr class="trone">
       <th>Nazwa</th>
       <th>Adres</th>
-      <th class="thnip">NIP</th>
+      <th>NIP</th>
     </tr>
   </thead>
 
@@ -21,7 +19,7 @@
         </td>
         <td>{{this.nip}}</td>
         <td class="more">
-          <a href="/{{_id}}">Więcej</a>
+          <a class="moree" href="/{{_id}}">Więcej</a>
         </td>
       </tr>
     {{/each}}

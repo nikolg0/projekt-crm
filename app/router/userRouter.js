@@ -18,7 +18,7 @@ function redirectIfLogged(req, res, next) {
 }
 
 router.get("/signup", (_req, res) => {
-  res.render("userViews/signupUser", { style: "signupUser.css" });
+  res.render("userViews/signupUser", { viewName: "signupView" });
 });
 
 router.post("/signup", userController.create);
@@ -28,11 +28,10 @@ router.get("/login", redirectIfLogged, (req, res) => {
     res.render("userViews/loginUser", {
       error: true,
       message: "Proszę się zalogować",
-      style: "loginUser.css",
     });
     return;
   }
-  res.render("userViews/loginUser", { style: "loginUser.css" });
+  res.render("userViews/loginUser", { viewName: "loginView" });
 });
 
 router.post("/login", userController.login);

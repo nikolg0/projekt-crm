@@ -9,7 +9,7 @@ const ActionController = require("../controllers/ActionController");
 router.get("/", clientController.index);
 
 router.get("/newClient", (_req, res) => {
-  res.render("clientViews/newClient", { style: "newClient.css" });
+  res.render("clientViews/newClient", { viewName: "newClientView" });
 });
 
 router.post("/newClient", clientController.create);
@@ -24,7 +24,7 @@ router.get("/:id/newAction", async (req, res) => {
 
   res.render("actionViews/newAction", {
     data: client[0],
-    style: "newAction.css",
+    viewName: "newActionView",
   });
 });
 

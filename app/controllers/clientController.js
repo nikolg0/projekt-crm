@@ -8,7 +8,6 @@ module.exports = {
       .then((clients) => {
         res.render("clientViews/client", {
           clients: clients,
-          style: "client.css",
           viewName: "clientView",
         });
       })
@@ -31,7 +30,6 @@ module.exports = {
             res.render("clientViews/singleClient", {
               post: post,
               actions: actions,
-              style: "singleClient.css",
               viewName: "singleView",
             });
           })
